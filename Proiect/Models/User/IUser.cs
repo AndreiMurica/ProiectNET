@@ -1,8 +1,8 @@
 ﻿using Proiect.Models.Base;
 using Proiect.Models.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 using System.Text.Json.Serialization;
+
 
 namespace Proiect.Models.User
 {
@@ -21,5 +21,9 @@ namespace Proiect.Models.User
         public string PasswordHash { get; set; }
         [Required]
         public Role Role { get; set; }
+        
+        public List<Product.Product> Istoric { get; set; }
+
+        public List<Review.Review> Reviews { get; set; }
     }
 }

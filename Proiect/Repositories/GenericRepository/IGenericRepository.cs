@@ -1,9 +1,13 @@
-﻿using Proiect.Models.Base;
+﻿using Microsoft.EntityFrameworkCore;
+using Proiect.Data;
+using Proiect.Models.Base;
+using System;
 
 namespace Proiect.Repositories.GenericRepository
 {
     public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
+        
         //get
         Task<List<TEntity>> GetAllAsync();
 

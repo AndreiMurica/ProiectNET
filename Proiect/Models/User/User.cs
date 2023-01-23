@@ -11,5 +11,8 @@ namespace Proiect.Models.User
         public string Username { get; set; }
         public string PasswordHash { get; set; }
         public Role Role { get; set; }
+        public List<Product.Product> Istoric { get ; set ; }
+        public List<Review.Review> Reviews { get; set; }
+        
     }
 }

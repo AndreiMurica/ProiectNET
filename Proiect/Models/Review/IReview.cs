@@ -5,6 +5,7 @@ namespace Proiect.Models.Review
 {
     public interface IReview : IBaseEntity
     {
+        [Range(1, 5)]
         [Required]
         public int Rating { get; set; }
         [Required]

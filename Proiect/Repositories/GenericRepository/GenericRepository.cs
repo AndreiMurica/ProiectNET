@@ -2,7 +2,7 @@
 using Proiect.Data;
 using Proiect.Models.Base;
 
-namespace Proiect.Repositories.GenericRepository
+namespace Proiect.Repositories.GenericRepository 
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {

@@ -2,6 +2,7 @@
 using Proiect.Models.Product;
 using Proiect.Models.Review;
 using Proiect.Models.User;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Proiect.Data
 {
@@ -13,6 +14,12 @@ namespace Proiect.Data
         
         public ProiectContext(DbContextOptions<ProiectContext> options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>(e => e.HasIndex(x => x.Username).IsUnique());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Proiect.Services.UserServices
         public IUserRepository _userRepository;
         private IJwtUtils _jwtUtils;
 
-        public UserService(IUserRepository userRepository, IJwtUtils jwtUtils)
+        public UserService(IUserRepository userRepository, IJwtUtils jwtUtils)  
         {
             _userRepository = userRepository;
             _jwtUtils = jwtUtils;
@@ -37,20 +37,23 @@ namespace Proiect.Services.UserServices
             await _userRepository.SaveAsync();
         }
 
-        public async Task<List<User>> GetAllUsers()
-        {
-            return await _userRepository.GetAllAsync();
-        }
-
         public User GetById(Guid id)
         {
             return _userRepository.FindById(id);
         }
 
+        public List<UserResponseDTO> GetAllUsers()
+        {
+            return _userRepository.GetAllUsers();
+        }
         public User Find(string username)
         {
             return _userRepository.FindByUsername(username);
         }
-
+        public void DeleteAllFunction()
+        {
+            _userRepository.DeleteAll();
+            _userRepository.Save();
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace Proiect.Controllers.Users
 
             
             [HttpGet("admin")]
-            public  IActionResult GetAllAdmin()
+            public  IActionResult GetAll()
             {
                 var users =  _userService.GetAllUsers();
                 return Ok(users);
@@ -78,5 +78,19 @@ namespace Proiect.Controllers.Users
                 var user = _userService.Find(username);
                 return Ok();
             }
+
+        [HttpDelete("delete-all-users")]
+        public IActionResult DeleteAllUsers()
+        {
+            try
+            {
+                _userService.DeleteAllFunction();
+                return Ok();
             }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+    }
 }

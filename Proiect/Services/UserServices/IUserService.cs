@@ -6,9 +6,10 @@ namespace Proiect.Services.UserServices
     public interface IUserService
     {
         UserResponseDTO Atuhentificate(UserRequestLoginDTO model);
-        Task<List<User>> GetAllUsers();
+        List<UserResponseDTO> GetAllUsers();
         User GetById(Guid id);
         Task Create(User newUser);
         User Find(string username);
+        void DeleteAllFunction();
     }
 }
