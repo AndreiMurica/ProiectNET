@@ -1,5 +1,6 @@
 ﻿using Proiect.Models.Base;
 using Proiect.Models.Enums;
+using Proiect.Models.ManyToMany;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -22,7 +23,7 @@ namespace Proiect.Models.User
         [Required]
         public Role Role { get; set; }
         
-        public List<Product.Product> Istoric { get; set; }
+        public List<Comanda> Istoric { get; set; }
 
         public List<Review.Review> Reviews { get; set; }
     }

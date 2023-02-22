@@ -1,4 +1,5 @@
 ﻿using Proiect.Models.Base;
+using Proiect.Models.ManyToMany;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proiect.Models.Product
@@ -10,7 +11,7 @@ namespace Proiect.Models.Product
         public decimal Price { get; set ; }
         public string? Category { get ; set ; }
         public User.User Vanzator { get; set; }
-        public List<User.User> CumparatDe { get; set; }
+        public List<Comanda> CumparatDe { get; set; }
         public List<Review.Review> Reviews { get; set; }
         public double Rating
         {
